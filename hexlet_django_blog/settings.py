@@ -68,8 +68,6 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATES[0]["DIRS"] = [BASE_DIR / 'templates']
-
 WSGI_APPLICATION = 'hexlet_django_blog.wsgi.application'
 
 

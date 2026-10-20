@@ -1,12 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic.base import View
 
-# Create your views here.
-def index(request):
-    return render(
-        request,
-        'articles/index.html',
-        context={
-            'name': 'articles',
-        }
-    )
+class IndexView(View):
+    def get(self, request, tags: str, article_id: int):
+        return render(
+            request,
+            'articles/index.html',
+            context = {
+                'tags': tags,
+                'article_id': article_id,
+            }
+        )
